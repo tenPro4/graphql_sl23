@@ -1,0 +1,64 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <GraphQL Remove="Mutations\CreateCourseMutation.graphql" />
+    <GraphQL Remove="Queries\CourseByIdQuery.graphql" />
+    <GraphQL Remove="Queries\CoursesQuery.graphql" />
+    <GraphQL Remove="Queries\InstructionsQuery.graphql" />
+    <GraphQL Remove="Queries\SearchQuery.graphql" />
+    <GraphQL Remove="Subscriptions\CourseCreatedSubscription.graphql" />
+    <GraphQL Remove="TestGG.graphql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Mutations\CreateCourseMutation.graphql" />
+    <None Remove="Queries\CourseByIdQuery.graphql" />
+    <None Remove="Queries\CoursesQuery.graphql" />
+    <None Remove="Queries\InstructionsQuery.graphql" />
+    <None Remove="Queries\SearchQuery.graphql" />
+    <None Remove="Subscriptions\CourseCreatedSubscription.graphql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <GraphQLConfig Include="Subscriptions\CourseCreatedSubscription.graphql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <GraphQLConfig Include="Queries\SearchQuery.graphql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <GraphQLConfig Include="Mutations\CreateCourseMutation.graphql" />
+    <GraphQLConfig Include="Queries\CourseByIdQuery.graphql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FirebaseAuthentication.net" Version="4.0.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
+    <PackageReference Include="StrawberryShake.CodeGeneration.CSharp.Analyzers" Version="12.19.2" />
+    <PackageReference Include="StrawberryShake.Transport.Http" Version="12.19.2" />
+    <PackageReference Include="StrawberryShake.Transport.WebSockets" Version="12.19.2" />
+    <PackageReference Include="System.Reactive" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <GraphQLConfig Include="Queries\CoursesQuery.graphql" />
+    <GraphQLConfig Include="Queries\InstructionsQuery.graphql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

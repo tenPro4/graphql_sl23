@@ -1,0 +1,10 @@
+﻿query GetInstructions{
+  instructors {
+    nodes{
+      id
+      firstName
+      lastName
+      salary
+    }
+  }
+}
